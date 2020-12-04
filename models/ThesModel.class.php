@@ -48,9 +48,7 @@ class ThesModel extends ModelManager{
         return $best;
     }
     public function getAllThes($id,$poid,$prix){
-        $id = produit.article;
-        $poid =produit.poids;
-        $prix= produit.prix;
+
        $query = $bdd -> prepare("SELECT `ref_the`,`titre_the`,`sousTitre_the`,`image_the`,`desc_the`,`publish`,Thes.id_the,     `id_quantite`,`prix`,`poid`,QuantiThes.id_the 
                 FROM Thes 
                 INNER JOIN QuantiThes on QuantiThes.id_the=Thes.id_the 

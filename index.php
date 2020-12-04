@@ -52,7 +52,11 @@ if(isset($_GET['page'])){
         case 'categories':
             $controller = new CategoriesController();
             $controller->display();
-            break;    
+            break;
+        case 'tester':
+            $controller = new PanierController();
+            $controller->getInfo();
+            break;        
         default:  
             $controller = new AccueilController();
             $controller->display();

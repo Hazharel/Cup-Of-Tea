@@ -39,13 +39,15 @@ function restore() {
     //récupérer tout ce qu'il y a dans mon formulaire
     
     //créer un objet Request
-    let req = new Request('../../models/ThesModel.class.php',{
-        body:produit
+    let req = new Request('index.php?page=tester',{
+        method : 'POST',
+        body: JSON.stringify(produit)
     })
     
     fetch(req)
         .then(response => response.json())
         .then(jeu=>{
+            console.log(jeu)
             document.getElementById('result').innerHTML=`<strong>${jeu['image_the']}</strong>`;
         })
         .catch(err => console.log(err));

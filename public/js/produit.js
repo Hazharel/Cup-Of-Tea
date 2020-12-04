@@ -27,7 +27,7 @@ function sauvegard() {
 
 
     id = this.dataset.id
-    let size = document.querySelector("#poid").value;
+    let size = document.querySelector("#price").value;
     let data = { prix: price, poids: size, article: id };
     console.log(data)
 
@@ -66,13 +66,7 @@ function restore() {
         console.log(tot)
         document.querySelector('#valeurPanier').innerHTML = tot.toFixed(2) + "€"; //pourquoi?
     }
-    
- 
-        for (let i = 0; i < panier.length; i++) {
-
-            $.post('controllers/PanierController.class.php',{idtry:panier.id},displayall)
-
-        }
+     
         
 }
 
