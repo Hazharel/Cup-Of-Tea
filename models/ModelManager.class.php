@@ -5,7 +5,7 @@ abstract class ModelManager{
     
     //contructeur --> connection a la bdd
     public function __construct(){
-        $this->bdd = new PDO('mysql:host=localhost;dbname=live-37_mohamedbel_CupOfTea;charset=utf8','mohamedbel','551c6980MmExOWM4NjRlYTMxNjJjNDJhOTY5N2Yy69de21ef');
+        $this->bdd = new PDO('mysql:host=localhost;dbname=live-37_teobou_CupOfTea;charset=utf8','teobou','c9275896YTQ4Nzc0N2M3MmIzODAzOWYyZTE5OTU33051ecbf');
     }
     public function queryOne($query,array $params = []){
         //methode qui va chercher UNE donnée en BDD

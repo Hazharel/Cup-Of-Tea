@@ -19,7 +19,7 @@ if(isset($_GET['page'])){
     //le redirige ver sla bonne page
     switch($_GET['page']){
         case 'thes':
-            $controller = new ThesController();
+            $controller = new ThesControµller();
             $controller->display();
             break;
         case 'register':
