@@ -45,10 +45,10 @@ function restore() {
     })
     
     fetch(req)
-        .then(response => response.json())
-        .then(jeu=>{
-            console.log(jeu)
-            document.getElementById('result').innerHTML=`<strong>${jeu['image_the']}</strong>`;
+        .then(response => response.text())
+        .then(best=>{
+            console.log(best)
+            document.getElementById('panier').innerHTML=`${best}`;
         })
         .catch(err => console.log(err));
 }

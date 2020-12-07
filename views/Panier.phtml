@@ -1,5 +1,13 @@
  
 <article id="result">
-
+    
+    
+   <?php foreach($data as $affichage): ?>
+   <p><?= $affichage -> prix ?></p> 
+   <p><?= $affichage -> poids ?></p> 
+   <img src="<?= $affichage -> image ?>" alt="">
+   
+    <?php endforeach; ?>
+   
 </article> 
-    <script type="text/javascript" src="public/js/panier.js"></script>
+    

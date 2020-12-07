@@ -18,7 +18,7 @@ class PanierController
                         
             
             
-            $template ='Panier.phtml';
+            $template ='panierAffichage.phtml';
             require 'views/layout.phtml';
             
             
@@ -55,14 +55,25 @@ class PanierController
      public function getInfo(){
           
           
-       
+       $thesModel = new ThesModel();
          // Takes raw data from the request
          $json = file_get_contents('php://input');
 
         // Converts it into a PHP object
         $data = json_decode($json);
 
-        echo json_encode($data);
+        for ($i =0;$i<count($data); $i++){
+            $prix = $data[$i] -> prix;
+            $poid = $data[$i] -> poids;
+            $article = $data[$i] -> article;
+            
+            $Thes = $thesModel -> getAllThes($article, $poid);
+            $data[$i] -> title = $Thes["titre_the"];
+            $data[$i] -> image = $Thes["image_the"];
+            
+        }
+        
+        require 'views/Panier.phtml';
     }
    
        
